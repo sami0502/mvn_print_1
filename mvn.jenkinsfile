@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+      tools {
+         maven 'MAVEN'
+         jdk 'JDK'
+   }
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+         stage('build') {
+            steps {
+                powershell '''cd C:\\Users\\E40047831\\eclipse-workspace\\helloworld_mvn_jenkins
+                dir 
+                mvn clean'''
+            }
+        }
+    }
+}
